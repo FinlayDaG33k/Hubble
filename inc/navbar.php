@@ -6,7 +6,7 @@
 
 <script>
 function showAPIkey() {
-    window.prompt("API Key:","<?php echo $apikey; ?>");
+    window.prompt("Below is your API key.\nThere is no need to keep the key secret (yet), but don't go all YOLO and share it everywhere!\nAPI Key:","<?php echo $apikey; ?>");
 }
 </script>
 
@@ -56,7 +56,7 @@ function showAPIkey() {
                 <ul class="dropdown-menu">
                   <li><a href="?action=addserver">Add Server</a></li>
                   <li><a href="?action=changepassword">Change Password</a></li>
-				  <li><a href="#" onclick="showAPIkey()">View API key (in-dev)</a></li>
+				  <li><a href="#" onclick="showAPIkey()">View API key</a></li>
 				  <?php 
 					include('inc/checkadmin.php');
 					if($is_admin == true){?>

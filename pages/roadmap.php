@@ -1,7 +1,16 @@
+<!-- 
+just dropping the buttons here cus I'm a lazy ass 
+
+<button class="btn btn-danger" type="button">Not Started</button>
+<button class="btn btn-warning" type="button">Work In Progress</button>
+<button class="btn btn-success" type="button">Complete</button>
+<td><button class="btn btn-primary" type="button">Stalled</button></td>
+-->
 <h3>Roadmap</h3>
 
 Below is a roadmap of everything I still want to do (list might not be 100% complete), which I am working on (might not be 100% up-to-date) and what I am done with.<br />
 Please take the whole roadmap with a grain of salt, it's just a small record for me to keep track of what I was doing and when i want it to be done.
+
 <p>
 <table class="table table-hover">
 	<thead>
@@ -12,13 +21,13 @@ Please take the whole roadmap with a grain of salt, it's just a small record for
 	</thead>
 	<tr>
 		<td>Write API Documentation</td>
-		<td><button class="btn btn-warning" type="button">Work In Progress</button></td>
+		<td><button class="btn btn-primary" type="button">Stalled</button></td>
 		<td>2016.05.*-dev</td>
 		<td></td>
 	</tr>
 	<tr>
 		<td>Add all texts to a language file</td>
-		<td><button class="btn btn-primary" type="button">Partially Complete</button></td>
+		<td><button class="btn btn-primary" type="button">Stalled</button></td>
 		<td>2016.11.*-dev</td>
 		<td></td>
 	</tr>
@@ -51,6 +60,12 @@ Please take the whole roadmap with a grain of salt, it's just a small record for
 		<td><button class="btn btn-danger" type="button">Not Started</button></td>
 		<td>2016.07.*-dev</td>
 		<td></td>
+	</tr>
+	<tr>
+		<td><button class="btn btn-danger" type="button">CRITICAL</button> Add check for already existing server (due to exploit found by frankie')</td>
+		<td><button class="btn btn-success" type="button">Complete</button></td>
+		<td>2016.04.20-dev</td>
+		<td>2016.04.17-dev</td>
 	</tr>
 	<tr>
 		<td>Send notifications for offline servers</td>
