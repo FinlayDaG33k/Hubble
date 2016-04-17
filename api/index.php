@@ -25,7 +25,8 @@ $con = mysqli_connect(CONF_MYSQL_SERVER,CONF_MYSQL_USER,CONF_MYSQL_PASS,CONF_MYS
 					"IP" => $server[2],
 					"port" => $server[3],
 					"status" => $server[4],
-					"last_check" => $server[5]
+					"last_check" => $server[5],
+					"last_error"=> $server[7]
 					);
 					$servers_array[] = $server_array;
 				}

@@ -11,8 +11,14 @@
     $getservers = "select * from servers";
             if ($servers=mysqli_query($con,$getservers)){
                 while ($server = mysqli_fetch_row($servers)){
-                        $updateserver = "UPDATE `servers` SET `server_status` = '".pingServer($server[2],$server[3])."',last_check='".date("d-m-y H:i:s")."' WHERE `servers`.`server_id` = ". $server[0].";"; // SQL to get the user
-						$result = $con->query($updateserver);
+						$server_status = pingServer($server[2],$server[3]);
+						if ($server_status == 1){
+							$updateserver = "UPDATE `servers` SET `server_status` = '".$server_status."',last_check='".date("d-m-y H:i:s")."' WHERE `servers`.`server_id` = ". $server[0].";"; // SQL to get the user
+							$result = $con->query($updateserver);
+						} else {
+							$updateserver = "UPDATE `servers` SET `server_status` = '".$server_status."',last_check='".date("d-m-y H:i:s")."', last_error='".date("d-m-y H:i:s")."' WHERE `servers`.`server_id` = ". $server[0].";"; // SQL to get the user
+							$result = $con->query($updateserver);
+						}
                 }
             }
 

@@ -11,6 +11,12 @@ Please take the whole roadmap with a grain of salt, it's just a small record for
 		<th>Finished</th>
 	</thead>
 	<tr>
+		<td>Write API Documentation</td>
+		<td><button class="btn btn-warning" type="button">Work In Progress</button></td>
+		<td>2016.05.*-dev</td>
+		<td></td>
+	</tr>
+	<tr>
 		<td>Add all texts to a language file</td>
 		<td><button class="btn btn-primary" type="button">Partially Complete</button></td>
 		<td>2016.11.*-dev</td>
@@ -26,12 +32,6 @@ Please take the whole roadmap with a grain of salt, it's just a small record for
 		<td>Finetune the layout</td>
 		<td><button class="btn btn-danger" type="button">Not Started</button></td>
 		<td>2016.06.*-dev</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td>Write API Documentation</td>
-		<td><button class="btn btn-danger" type="button">Not Started</button></td>
-		<td>2016.05.*-dev</td>
 		<td></td>
 	</tr>
 	<tr>
@@ -53,16 +53,22 @@ Please take the whole roadmap with a grain of salt, it's just a small record for
 		<td></td>
 	</tr>
 	<tr>
-		<td>Add last offline time</td>
-		<td><button class="btn btn-danger" type="button">Not Started</button></td>
-		<td>2016.08.*-dev</td>
-		<td></td>
+		<td>Send notifications for offline servers</td>
+		<td><button class="btn btn-success" type="button">Complete</button></td>
+		<td>2016.04.20-dev</td>
+		<td>2016.04.17</td>
 	</tr>
 	<tr>
-		<td>Add everything to github</td>
-		<td><button class="btn btn-danger" type="button">Not Started</button></td>
+		<td>Create Github repo</td>
+		<td><a href="https://github.com/FinlayDaG33k/Hubble" target="_new"><button class="btn btn-success" type="button">Complete</button></a></td>
 		<td>N/A</td>
-		<td></td>
+		<td>2016.04.15-dev</td>
+	</tr>
+	<tr>
+		<td>Add last offline time</td>
+		<td><button class="btn btn-success" type="button">Complete</button></td>
+		<td>2016.08.*-dev</td>
+		<td>2016.04.17-dev</td>
 	</tr>
 	<tr>
 		<td>Build an API (with authentication)</td>

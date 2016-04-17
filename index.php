@@ -35,12 +35,13 @@
                 <?php   
 				    include("pages/$action.php"); 
 			    ?>
-            </div>
-			<footer class="footer">
+				<footer class="footer">
             <div class="container">
 				<p class="text-muted credit"><?php include("inc/footer.php"); ?></p>
 			</div>
 			</footer>
+            </div>
+			
         </div>
     </body>
 </html>
