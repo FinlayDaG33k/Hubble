@@ -27,7 +27,7 @@
                 // Check if the password is correct against the hash in the database
                 if (password_verify($currpass, $row[2])) {
                     // User credentials are valid, now go on and change it.
-                    $passhash = password_hash($newpass,PASSWORD_BCRYPT);
+                    $passhash = password_hash($newpass,PASSWORD_BCRYPT,["cost" => HASHCOST]);
                     $changepass = "UPDATE `users` SET `password` = '$passhash' WHERE `users`.`username` ='".$_SESSION['user']."';";
                     if ($con->query($changepass) === TRUE) {
                         echo "Password changed succesfully!";

@@ -22,7 +22,7 @@ $con = mysqli_connect(CONF_MYSQL_SERVER,CONF_MYSQL_USER,CONF_MYSQL_PASS,CONF_MYS
 				$pass = mysqli_real_escape_string($con,$_POST['pass']);
 				$passconf = mysqli_real_escape_string($con,$_POST['passconf']);
 				if($pass == $passconf){
-					$addserver = "INSERT INTO `users` (`username`, `password`, `role`, `registration_ip`, `authkey`) VALUES ('$username', '".password_hash($pass,PASSWORD_BCRYPT)."', '0','".$_SERVER["HTTP_CF_CONNECTING_IP"]."','".generateRandomString()."');"; // SQL to insert the server
+					$addserver = "INSERT INTO `users` (`username`, `password`, `role`, `registration_ip`, `authkey`) VALUES ('$username', '".password_hash($pass,PASSWORD_BCRYPT,["cost" => HASHCOST])."', '0','".$_SERVER["HTTP_CF_CONNECTING_IP"]."','".generateRandomString()."');"; // SQL to insert the server
 						if ($con->query($addserver) === TRUE) {
 							echo "Registration succesful!";
 						} else {

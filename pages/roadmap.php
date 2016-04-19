@@ -20,6 +20,12 @@ Please take the whole roadmap with a grain of salt, it's just a small record for
 		<th>Finished</th>
 	</thead>
 	<tr>
+		<td>Protocol check instead of socket check</td>
+		<td><button class="btn btn-warning" type="button">Work In Progress</button></td>
+		<td>2016.07.*-dev</td>
+		<td></td>
+	</tr>
+	<tr>
 		<td>Write API Documentation</td>
 		<td><button class="btn btn-primary" type="button">Stalled</button></td>
 		<td>2016.05.*-dev</td>
@@ -28,7 +34,7 @@ Please take the whole roadmap with a grain of salt, it's just a small record for
 	<tr>
 		<td>Add all texts to a language file</td>
 		<td><button class="btn btn-primary" type="button">Stalled</button></td>
-		<td>2016.11.*-dev</td>
+		<td>N/A</td>
 		<td></td>
 	</tr>
 	<tr>
@@ -40,25 +46,25 @@ Please take the whole roadmap with a grain of salt, it's just a small record for
 	<tr>
 		<td>Finetune the layout</td>
 		<td><button class="btn btn-danger" type="button">Not Started</button></td>
-		<td>2016.06.*-dev</td>
+		<td>N/A</td>
 		<td></td>
 	</tr>
 	<tr>
-		<td>Send notifications for offline servers</td>
+		<td>Automatic Page Updates</td>
 		<td><button class="btn btn-danger" type="button">Not Started</button></td>
-		<td>2016.05.*-dev</td>
+		<td>N/A</td>
 		<td></td>
 	</tr>
 	<tr>
-		<td>Automatic Page Refresh</td>
+		<td>Port bundles (multiple ports per server)</td>
 		<td><button class="btn btn-danger" type="button">Not Started</button></td>
-		<td>2016.06.*-dev</td>
+		<td>N/A</td>
 		<td></td>
 	</tr>
 	<tr>
-		<td>Protocol check instead of socket check</td>
+		<td>Mail logs (send a mail with weekly statistics)</td>
 		<td><button class="btn btn-danger" type="button">Not Started</button></td>
-		<td>2016.07.*-dev</td>
+		<td>N/A</td>
 		<td></td>
 	</tr>
 	<tr>

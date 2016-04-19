@@ -39,7 +39,7 @@
                             <td><?php echo $server[6]; ?></td>
 							<td><?php echo $server[2]; ?></td>
                             <td><?php echo $server[3]; ?></td>
-                            <td><?php if($server[3] == 80){ ?><a href="http://<?php echo $server[2] ?>" target="_new"><?php } ?><?php if($server[4] == true){ ?><button type="button" class="btn btn-success">Online</button><?php }else{ ?><button type="button" class="btn btn-danger">Offline</button><?php }; ?><?php if($server[3] == 80){ ?></a><?php } ?></td>
+                            <td><?php if($server[4] == true){ ?><button type="button" class="btn btn-success" <?php if($server[3] == 80 || $server[3] == 443){?>onclick="alert('<?php echo $server[8]; ?>')"<?php }?>>Online</button><?php }else{ ?><button type="button" class="btn btn-danger" <?php if($server[3] == 80 || $server[3] == 443){?>onclick="alert('<?php echo $server[8]; ?>')"<?php }?>>Offline</button><?php } ?></td>
 							<td><?php echo $server[5]; ?></td>
 							<td><?php echo $server[7]; ?></td>
 							<th>

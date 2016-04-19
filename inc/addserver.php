@@ -20,7 +20,8 @@
             
             require($_SERVER['DOCUMENT_ROOT'] . '/lib/lib_socketpingonoff.php');
             $selectserver = "SELECT * FROM `servers` WHERE `server_owner`='".$user_row[0]."' AND `server_ip`='".$server_IP."' AND `server_port`='".$server_port."';"; // SQL to insert the server
-            if (mysqli_num_rows($con,$query) > 0) {
+            
+			if (!mysqli_num_rows($con,$query) > 0) {
                 $addserver = "INSERT INTO `servers` (`server_ip`, `server_port`, `server_owner`, `server_status`, `last_check`, `server_name`) VALUES ('$server_IP', '$server_port', '".$user_row['0']."', '".pingServer($server_IP,$server_port)."','".date("d-m-y H:i:s")."', '".$server_name."');"; // SQL to insert the server
 				if ($con->query($addserver) === TRUE) {
 					echo "Server Added succesfully!";

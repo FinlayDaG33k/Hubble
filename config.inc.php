@@ -4,7 +4,8 @@
     DEFINE('CONF_MYSQL_USER','servermonitor');
     DEFINE('CONF_MYSQL_PASS','I360N0SC0P3DJFK');
     DEFINE('CONF_MYSQL_DB','servermonitor');
-
-    // Language
-    DEFINE('CONF_LANG','en-EN');
+	
+	
+    DEFINE('CONF_LANG','en-EN');    // Language
+	DEFINE('HASHCOST','10');		// set cost for password hash
 ?>
