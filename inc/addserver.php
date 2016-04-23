@@ -17,12 +17,13 @@
             $server_IP = mysqli_real_escape_string($con,$_POST['serverip']);
             $server_port = mysqli_real_escape_string($con,$_POST['serverport']);
 			$server_name = mysqli_real_escape_string($con,$_POST['servername']);
+            $server_protocol = mysqli_real_escape_string($con,$_POST['serverprotocol']);
             
-            require($_SERVER['DOCUMENT_ROOT'] . '/lib/lib_socketpingonoff.php');
+			require($_SERVER['DOCUMENT_ROOT'] . '/lib/lib_socketpingonoff.php');
             $selectserver = "SELECT * FROM `servers` WHERE `server_owner`='".$user_row[0]."' AND `server_ip`='".$server_IP."' AND `server_port`='".$server_port."';"; // SQL to insert the server
             
 			if (!mysqli_num_rows($con,$query) > 0) {
-                $addserver = "INSERT INTO `servers` (`server_ip`, `server_port`, `server_owner`, `server_status`, `last_check`, `server_name`) VALUES ('$server_IP', '$server_port', '".$user_row['0']."', '".pingServer($server_IP,$server_port)."','".date("d-m-y H:i:s")."', '".$server_name."');"; // SQL to insert the server
+					$addserver = "INSERT INTO `servers` (`server_ip`, `server_port`, `server_owner`, `server_status`, `last_check`, `server_name`, `server_protocol`) VALUES ('$server_IP', '$server_port', '".$user_row['0']."', '".pingServer($server_IP,$server_port)."','".date("d-m-y H:i:s")."', '".$server_name."', '".$server_protocol."');"; // SQL to insert the server
 				if ($con->query($addserver) === TRUE) {
 					echo "Server Added succesfully!";
 				} else {

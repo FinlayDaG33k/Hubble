@@ -8,7 +8,7 @@
         if (!$file) $status = 0;  // Server is down
         else {
             fclose($file);
-            $status = 1;
+            $status = 2;
         }
         return $status;
     }

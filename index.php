@@ -32,15 +32,13 @@
                 <div id="Navbar"><?php include($_SERVER['DOCUMENT_ROOT'] . '/inc/navbar.php') ?></div>
             </div>
             <div id="Content">
-                <?php   
-				    include("pages/$action.php"); 
-			    ?>
+				<div id="body">
+					<?php include("pages/$action.php"); ?>
+				</div>
+				<div id="footer" class="footer">
+					<p class="text-muted credit"><?php include("inc/footer.php"); ?></p>
+				</div>
             </div>
-			<footer class="footer">
-            <div class="container">
-				<p class="text-muted credit"><?php include("inc/footer.php"); ?></p>
-			</div>
-			</footer>
         </div>
     </body>
 </html>

@@ -22,7 +22,13 @@ Please take the whole roadmap with a grain of salt, it's just a small record for
 	<tr>
 		<td>Protocol check instead of socket check</td>
 		<td><button class="btn btn-warning" type="button">Work In Progress</button></td>
-		<td>2016.07.*-dev</td>
+		<td>N/A</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td><button class="btn btn-danger" type="button">Urgent</button> Automatic Page Updates</td>
+		<td><button class="btn btn-warning" type="button">Work In Progress</button></td>
+		<td>N/A</td>
 		<td></td>
 	</tr>
 	<tr>
@@ -66,6 +72,18 @@ Please take the whole roadmap with a grain of salt, it's just a small record for
 		<td><button class="btn btn-danger" type="button">Not Started</button></td>
 		<td>N/A</td>
 		<td></td>
+	</tr>
+	<tr>
+		<td>Make that footer thingy stick to the bottom of the page instead of browser</td>
+		<td><button class="btn btn-success" type="button">Complete</button></td>	
+		<td>2016.04.*-dev</td>
+		<td>2016.04.22-dev</td>
+	</tr>
+	<tr>
+		<td>Manually select protocol/app</td>
+		<td><button class="btn btn-success" type="button">Complete</button></td>	
+		<td>N/A</td>
+		<td>2016.04.22-dev</td>
 	</tr>
 	<tr>
 		<td><button class="btn btn-danger" type="button">CRITICAL</button> Add check for already existing server (due to exploit found by frankie')</td>

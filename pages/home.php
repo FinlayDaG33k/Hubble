@@ -1,4 +1,3 @@
-
 <?php
     require($_SERVER['DOCUMENT_ROOT'] . '/config.inc.php');
     require($_SERVER['DOCUMENT_ROOT'] . '/lang/'. CONF_LANG . '.php');
@@ -39,10 +38,19 @@
                             <td><?php echo $server[6]; ?></td>
 							<td><?php echo $server[2]; ?></td>
                             <td><?php echo $server[3]; ?></td>
-                            <td><?php if($server[4] == true){ ?><button type="button" class="btn btn-success" <?php if($server[3] == 80 || $server[3] == 443){?>onclick="alert('<?php echo $server[8]; ?>')"<?php }?>>Online</button><?php }else{ ?><button type="button" class="btn btn-danger" <?php if($server[3] == 80 || $server[3] == 443){?>onclick="alert('<?php echo $server[8]; ?>')"<?php }?>>Offline</button><?php } ?></td>
+                            <td>
+								<?php if($server[4] == "2"){ ?>
+									<button type="button" class="btn btn-success" <?php if($server[9] == "http" || $server[9] == "https"){?>onclick="alert('<?php echo $server[8]; ?>')"<?php }?>>Online</button>
+								<?php }elseif($server[4] == "0"){ ?>
+									<button type="button" class="btn btn-danger" <?php if($server[9] == "http" || $server[9] == "https"){?>onclick="alert('<?php echo $server[8]; ?>')"<?php }?>>Offline</button>
+								<?php }elseif($server[4] == "1"){ ?>
+									<button type="button" class="btn btn-warning" <?php if($server[9] == "http" || $server[9] == "https"){?>onclick="alert('<?php echo $server[8]; ?>')"<?php }?>>Error</button>
+								<?php } ?>
+							</td>
 							<td><?php echo $server[5]; ?></td>
 							<td><?php echo $server[7]; ?></td>
 							<th>
+								<?php if($server[9] == "ts3" && $server[4] == "0"){ ?><a href="?action=setup_ts3&server_id=<?php echo $server[0]; ?>"><button type="button" class="btn btn-primary">setup</button></a><?php } ?>
 								<a href="?action=editserver&server_id=<?php echo $server[0]; ?>"><button type="button" class="btn btn-warning">Edit</button></a>
 								<a href="inc/removeserver.php?server_id=<?php echo $server[0]; ?>"><button type="button" class="btn btn-danger">Remove</button></a>
 							</th>

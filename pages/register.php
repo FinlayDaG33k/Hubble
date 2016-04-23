@@ -12,6 +12,7 @@ $chapta_operator = $items[array_rand($items)];
                 <input type="password" class="form-control" name="pass" required="required">
             <label class="col-sm-12 control-label" for="passconf">Password (Confirm)</label>
                 <input type="password" class="form-control" name="passconf" required="required">
+			<input type="checkbox" name="agreetos" required="required"> I have read and agree with the <a href="?action=tos" target="_new">Terms of Service</a><br>
 			<label class="col-sm-12 control-label" for="inputchapta">Enter the answer to the question below in digits (eg. 42)</label>
 			<label class="col-sm-12 control-label" for="passconf"><?php echo $chapta1;?> <?php echo $chapta_operator;?> <?php echo $chapta2;?></label>
 				<input type="text" class="form-control" name="inputchapta" required="required">

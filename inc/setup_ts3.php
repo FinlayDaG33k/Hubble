@@ -17,16 +17,15 @@
             $server_IP = mysqli_real_escape_string($con,$_POST['serverip']);
             $server_port = mysqli_real_escape_string($con,$_POST['serverport']);
             $server_ID = mysqli_real_escape_string($con,$_POST['serverid']);
-			$server_name = mysqli_real_escape_string($con,$_POST['servername']);
-			$server_protocol = mysqli_real_escape_string($con,$_POST['serverprotocol']);
+			$server_key = mysqli_real_escape_string($con,$_POST['serverkey']);
 			
             require($_SERVER['DOCUMENT_ROOT'] . '/lib/lib_socketpingonoff.php');
             
-            $editserver = "UPDATE `servers` SET `server_IP`='$server_IP', `server_Port`='$server_port', `server_status`='".pingServer($server_IP,$server_port)."',last_check='".date("d-m-y H:i:s")."', server_name='".$server_name."', server_protocol='".$server_protocol."' WHERE server_ID='$server_ID' AND server_owner='".$user_row[0]."';"; // SQL to update the server
+            $editserver = "UPDATE `servers` SET `server_IP`='$server_IP', `server_Port`='$server_port', query_pass='".$server_key."' WHERE server_ID='$server_ID' AND server_owner='".$user_row[0]."';"; // SQL to update the server
 			if ($con->query($editserver) === TRUE) {
                         echo "Server editted succesfully!";
                     } else {
-                        echo "Error editted server: " . $conn->error;
+                        echo "Error editing server: " . $conn->error;
             }
         }
     }
