@@ -1,7 +1,12 @@
 <?php
     require($_SERVER['DOCUMENT_ROOT'] . '/config.inc.php');
     require($_SERVER['DOCUMENT_ROOT'] . '/lang/'. CONF_LANG . '.php');
+	ini_set("session.cookie_secure", 1);
+	ini_set('session.cookie_httponly', 1);
+	ini_set('session.hash_function', 'sha512');
+	ini_set('session.entropy_file', '/dev/urandom');
     session_start();
+	session_regenerate_id();
     
 
     // establishing the MySQLi connection
@@ -25,9 +30,10 @@
             // Check if the password is correct against the hash in the database
             if (password_verify($pass, $row[2])) {
                 // User credentials are valid :D
-               $_SESSION['user'] = $user;
-               $_SESSION['favcolor'] = 'green';
-               header ("Location: http://".$_SERVER['HTTP_HOST']); 
+				$_SESSION['timeout'] = time() + 600;
+				$_SESSION['user'] = htmlentities($user);
+				$_SESSION['favcolor'] = 'green';
+				header ("Location: http://".$_SERVER['HTTP_HOST']); 
             } else {
                 // Credentials are invalid :C
                 header ("Location: http://".$_SERVER['HTTP_HOST']."?action=login&failed=true"); 

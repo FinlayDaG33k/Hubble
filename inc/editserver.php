@@ -21,14 +21,19 @@
 			$server_protocol = mysqli_real_escape_string($con,$_POST['serverprotocol']);
 			
             require($_SERVER['DOCUMENT_ROOT'] . '/lib/lib_socketpingonoff.php');
-            
-            $editserver = "UPDATE `servers` SET `server_IP`='$server_IP', `server_Port`='$server_port', `server_status`='".pingServer($server_IP,$server_port)."',last_check='".date("d-m-y H:i:s")."', server_name='".$server_name."', server_protocol='".$server_protocol."' WHERE server_ID='$server_ID' AND server_owner='".$user_row[0]."';"; // SQL to update the server
-			if ($con->query($editserver) === TRUE) {
-                        echo "Server editted succesfully!";
-                    } else {
-                        echo "Error editted server: " . $conn->error;
-            }
+            if ( ! filter_var($_GET['ip'], FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE) ){
+				echo 'This server is not allowed! please go back and check the IP!';
+			}else{
+				$editserver = "UPDATE `servers` SET `server_IP`='$server_IP', `server_Port`='$server_port', `server_status`='".pingServer($server_IP,$server_port)."',last_check='".date("d-m-y H:i:s")."', server_name='".$server_name."', server_protocol='".$server_protocol."' WHERE server_ID='$server_ID' AND server_owner='".$user_row[0]."';"; // SQL to update the server
+				if ($con->query($editserver) === TRUE) {
+                    echo "Server editted succesfully!";
+                } else {
+                    echo "Error editted server: " . $conn->error;
+				}
+			}
         }
-    }
-        
+    }else{
+		echo 'Please login to do this!';
+	}
+?>
    

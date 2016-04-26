@@ -48,6 +48,7 @@
 					<option value="http" <?php if($server_row[4] == "http"){ ?> selected="selected" <?php } ?>>HTTP</option>
 					<option value="https" <?php if($server_row[4] == "https"){ ?> selected="selected" <?php } ?>>HTTPS</option>
 					<option value="ts3" <?php if($server_row[4] == "ts3"){ ?> selected="selected" <?php } ?>>Teamspeak 3</option>
+					<option value="minecraft"<?php if($server_row[4] == "minecraft"){ ?> selected="selected" <?php } ?>>Minecraft</option>
 					<option value="other" <?php if($server_row[4] == "other" || $server_row[4] == ""){ ?> selected="selected" <?php } ?>>Other</option>
 				</select>
 			</td>

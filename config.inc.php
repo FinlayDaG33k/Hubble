@@ -7,5 +7,6 @@
 	
 	
     DEFINE('CONF_LANG','en-EN');    // Language
-	DEFINE('HASHCOST','10');		// set cost for password hash
+	DEFINE('HASHCOST','10');		// cost for hashing passwords
+	DEFINE('CAPTCHA_SECRET','NSA-KNOWS-THIS'); // set Captcha secret
 ?>

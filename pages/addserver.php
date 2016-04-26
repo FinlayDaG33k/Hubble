@@ -22,6 +22,7 @@
 					<option value="http"selected="selected">HTTP</option>
 					<option value="https">HTTPS</option>
 					<option value="ts3">Teamspeak 3</option>
+					<option value="minecraft">Minecraft</option>
 					<option value="other">Other</option>
 				</select>
 			</td>

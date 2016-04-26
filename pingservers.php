@@ -71,6 +71,19 @@
 							$updateserver = "UPDATE `servers` SET `server_status` = '".$server_status."',last_check='".date("d-m-y H:i:s")."', last_error='".date("d-m-y H:i:s")."' WHERE `servers`.`server_id` = ". $server[0].";"; // SQL to get the user
 							$result = $con->query($updateserver);
 						}
+					}elseif($server[9] == "minecraft"){
+						require_once("/var/www/html/lib/lib_mcstatus.php");
+						$output = new MCServerStatus($server[2], $server[3]);
+						if($output->online == 2){
+							$updateserver = "UPDATE `servers` SET `server_status` = '".$output->online."',server_message='".mysqli_real_escape_string($con,$output->output)."',last_check='".date("d-m-y H:i:s")."' WHERE `servers`.`server_id` = ". $server[0].";"; // SQL to get the user
+							$result = $con->query($updateserver);
+						}elseif($output->online == 1){
+							$updateserver = "UPDATE `servers` SET `server_status` = '".$output->online."',server_message='".mysqli_real_escape_string($con,$output->output)."',last_check='".date("d-m-y H:i:s")."',last_error='".date("d-m-y H:i:s")."' WHERE `servers`.`server_id` = ". $server[0].";"; // SQL to get the user
+							$result = $con->query($updateserver);
+						}else{
+							$updateserver = "UPDATE `servers` SET `server_status` = '".$output->online."',server_message='".mysqli_real_escape_string($con,$output->output)."',last_check='".date("d-m-y H:i:s")."',last_error='".date("d-m-y H:i:s")."' WHERE `servers`.`server_id` = ". $server[0].";"; // SQL to get the user
+							$result = $con->query($updateserver);
+						}	
 					}else{
 						$server_status = pingServer($server[2],$server[3]);
 						if ($server_status == 2){
@@ -83,6 +96,5 @@
 					}
                 }
             }
-
 ?>
 

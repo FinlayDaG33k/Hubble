@@ -19,7 +19,6 @@
 		$action = home;
 	}
 ?>
-
 <html>
     <head>
         <title>Hubble</title>
@@ -31,15 +30,15 @@
                 <div id="Logo"></div>
                 <div id="Navbar"><?php include($_SERVER['DOCUMENT_ROOT'] . '/inc/navbar.php') ?></div>
             </div>
-            <div id="Content">
-				<div id="body">
+            <div id="Content" class="container">
 					<?php include("pages/$action.php"); ?>
-				</div>
-				<div id="footer" class="footer">
-					<p class="text-muted credit"><?php include("inc/footer.php"); ?></p>
-				</div>
             </div>
-        </div>
+					<footer class="footer">
+			<div class="container">
+				<p class="text-muted"><?php include("inc/footer.php"); ?></p>
+			</div>
+		</footer>
+		</div>
     </body>
 </html>
 

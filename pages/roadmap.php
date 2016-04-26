@@ -20,14 +20,14 @@ Please take the whole roadmap with a grain of salt, it's just a small record for
 		<th>Finished</th>
 	</thead>
 	<tr>
-		<td>Protocol check instead of socket check</td>
-		<td><button class="btn btn-warning" type="button">Work In Progress</button></td>
-		<td>N/A</td>
+		<td>Make that footer thingy stick to the bottom of the page instead of browser</td>
+		<td><button class="btn btn-primary" type="button">Stalled</button></td>
+		<td>2016.04.*-dev</td>
 		<td></td>
 	</tr>
 	<tr>
-		<td><button class="btn btn-danger" type="button">Urgent</button> Automatic Page Updates</td>
-		<td><button class="btn btn-warning" type="button">Work In Progress</button></td>
+		<td>Automatic Page Updates</td>
+		<td><button class="btn btn-primary" type="button">Stalled</button></td>
 		<td>N/A</td>
 		<td></td>
 	</tr>
@@ -44,9 +44,27 @@ Please take the whole roadmap with a grain of salt, it's just a small record for
 		<td></td>
 	</tr>
 	<tr>
+		<td><button class="btn btn-warning" type="button">Urgent</button> Add check for weak/bad passwords (suggested by R3boot & Sling)</td>
+		<td><button class="btn btn-danger" type="button">Not Started</button></td>
+		<td>N/A</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td><button class="btn btn-warning" type="button">Urgent</button> Add check for weak/bad usernames (suggested by R3boot & Sling)</td>
+		<td><button class="btn btn-danger" type="button">Not Started</button></td>
+		<td>N/A</td>
+		<td></td>
+	</tr>
+	<tr>
 		<td>Better redirection on user action (registration, adding server etc.)</td>
 		<td><button class="btn btn-danger" type="button">Not Started</button></td>
 		<td>2016.04.*-dev</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>Ability to turnoff the notifications (suggested by R3boot)</td>
+		<td><button class="btn btn-danger" type="button">Not Started</button></td>
+		<td>N/A</td>
 		<td></td>
 	</tr>
 	<tr>
@@ -74,10 +92,28 @@ Please take the whole roadmap with a grain of salt, it's just a small record for
 		<td></td>
 	</tr>
 	<tr>
-		<td>Make that footer thingy stick to the bottom of the page instead of browser</td>
-		<td><button class="btn btn-success" type="button">Complete</button></td>	
-		<td>2016.04.*-dev</td>
-		<td>2016.04.22-dev</td>
+		<td><button class="btn btn-danger" type="button">CRITICAL</button> Better Captcha (found by Sling)</td>
+		<td><button class="btn btn-success" type="button">Complete</button></td>
+		<td>N/A</td>
+		<td>2016.04.26-dev</td>
+	</tr>
+	<tr>
+		<td><button class="btn btn-danger" type="button">CRITICAL</button> Add limitations & Restrictions (found by Sling)</td>
+		<td><button class="btn btn-success" type="button">Complete</button></td>
+		<td>N/A</td>
+		<td>2016.04.26-dev</td>
+	</tr>
+	<tr>
+		<td><button class="btn btn-danger" type="button">CRITICAL</button> Secure cookies</td>
+		<td><button class="btn btn-success" type="button">Complete</button></td>
+		<td>2016.04.27-dev</td>
+		<td>2016.04.26-dev</td>
+	</tr>
+	<tr>
+		<td><button class="btn btn-danger" type="button">CRITICAL</button> Fix XSS (found by Sling)</td>
+		<td><button class="btn btn-success" type="button">Complete</button></td>
+		<td>N/A</td>
+		<td>2016.04.25-dev</td>
 	</tr>
 	<tr>
 		<td>Manually select protocol/app</td>
@@ -86,7 +122,7 @@ Please take the whole roadmap with a grain of salt, it's just a small record for
 		<td>2016.04.22-dev</td>
 	</tr>
 	<tr>
-		<td><button class="btn btn-danger" type="button">CRITICAL</button> Add check for already existing server (due to exploit found by frankie')</td>
+		<td><button class="btn btn-danger" type="button">CRITICAL</button> Add check for already existing server (found by frankie')</td>
 		<td><button class="btn btn-success" type="button">Complete</button></td>
 		<td>2016.04.20-dev</td>
 		<td>2016.04.17-dev</td>
@@ -95,19 +131,19 @@ Please take the whole roadmap with a grain of salt, it's just a small record for
 		<td>Send notifications for offline servers</td>
 		<td><button class="btn btn-success" type="button">Complete</button></td>
 		<td>2016.04.20-dev</td>
-		<td>2016.04.17</td>
-	</tr>
-	<tr>
-		<td>Create Github repo</td>
-		<td><a href="https://github.com/FinlayDaG33k/Hubble" target="_new"><button class="btn btn-success" type="button">Complete</button></a></td>
-		<td>N/A</td>
-		<td>2016.04.15-dev</td>
+		<td>2016.04.17-dev</td>
 	</tr>
 	<tr>
 		<td>Add last offline time</td>
 		<td><button class="btn btn-success" type="button">Complete</button></td>
 		<td>2016.08.*-dev</td>
 		<td>2016.04.17-dev</td>
+	</tr>
+	<tr>
+		<td>Create Github repo</td>
+		<td><a href="https://github.com/FinlayDaG33k/Hubble" target="_new"><button class="btn btn-success" type="button">Complete</button></a></td>
+		<td>N/A</td>
+		<td>2016.04.15-dev</td>
 	</tr>
 	<tr>
 		<td>Build an API (with authentication)</td>

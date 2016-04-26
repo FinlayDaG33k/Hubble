@@ -1,11 +1,7 @@
-<?php
-$items = Array('+','-','*');
-$chapta1 = rand(0, 10);
-$chapta2 = rand(0, 10);
-$chapta_operator = $items[array_rand($items)];
-?>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+
 <form action="login/register.php" method="post" >
-       <div class="form-group form-group-sm col-sm-3">
+       <div class="form-group form-group-sm col-sm-4">
             <label class="col-sm-12 control-label" for="user">Username</label>
                 <input type="text" class="col-sm-2 form-control" name="user" required="required"/>
             <label class="col-sm-12 control-label" for="pass">Password</label>
@@ -13,13 +9,7 @@ $chapta_operator = $items[array_rand($items)];
             <label class="col-sm-12 control-label" for="passconf">Password (Confirm)</label>
                 <input type="password" class="form-control" name="passconf" required="required">
 			<input type="checkbox" name="agreetos" required="required"> I have read and agree with the <a href="?action=tos" target="_new">Terms of Service</a><br>
-			<label class="col-sm-12 control-label" for="inputchapta">Enter the answer to the question below in digits (eg. 42)</label>
-			<label class="col-sm-12 control-label" for="passconf"><?php echo $chapta1;?> <?php echo $chapta_operator;?> <?php echo $chapta2;?></label>
-				<input type="text" class="form-control" name="inputchapta" required="required">
-				<input type="submit" class="form-control" name="login" value="Add User"/>
-				<input type="hidden" class="form-control" name="chapta1" value="<?php echo $chapta1;?>"/>
-				<input type="hidden" class="form-control" name="chapta2" value="<?php echo $chapta2;?>"/>
-				<input type="hidden" class="form-control" name="chaptaoperator" value="<?php echo $chapta_operator;?>"/>
-        </div>
-        
+			<label class="col-sm-12 control-label" for="inputchapta">Please solve the Captcha below</label>
+			<div class="g-recaptcha" data-sitekey="6Lco_Q8TAAAAAJ7jtI2gOF0os25bwiwu1zqiAoaI"></div><br /><br />	
+			<input type="submit" class="form-control" name="login" value="Add User"/>
 </form>

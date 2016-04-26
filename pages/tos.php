@@ -7,6 +7,7 @@
 This means you can't blame me for inaccurate and/or lost data.<br />
 When I suspect inappropriate use of Hubble, this may lead to suspension of your account.<br />
 The TOS can be updated at any time without any further notice.<br />
+You are only allowed to have a maximum of 5 accounts with 5 servers per account. (exceptions for users who have been early adopters)<br />
   </div>
 </div>
 
