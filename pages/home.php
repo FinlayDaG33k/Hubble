@@ -40,11 +40,11 @@
                             <td><?php echo htmlentities($server[3]); ?></td>
                             <td>
 								<?php if($server[4] == "2"){ ?>
-									<button type="button" class="btn btn-success" <?php if($server[8] !== "" && $server[8] !== null){?>onclick="alert('<?php echo $server[8]; ?>')"<?php }?>>Online</button>
+									<button type="button" class="btn btn-success" <?php if($server[8] !== "" && $server[8] !== null){?>onclick="alert('<?php echo mysqli_real_escape_string($con,$server[8]); ?>')"<?php }?>>Online</button>
 								<?php }elseif($server[4] == "0"){ ?>
-									<button type="button" class="btn btn-danger" <?php if($server[8] !== "" && $server[8] !== null){?>onclick="alert('<?php echo $server[8]; ?>')"<?php }?>>Offline</button>
+									<button type="button" class="btn btn-danger" <?php if($server[8] !== "" && $server[8] !== null){?>onclick="alert('<?php echo mysqli_real_escape_string($con,$server[8]); ?>')"<?php }?>>Offline</button>
 								<?php }elseif($server[4] == "1"){ ?>
-									<button type="button" class="btn btn-warning" <?php if($server[8] !== "" && $server[8] !== null){?>onclick="alert('<?php echo $server[8]; ?>')"<?php }?>>Error</button>
+									<button type="button" class="btn btn-warning" <?php if($server[8] !== "" && $server[8] !== null){?>onclick="alert('<?php echo mysqli_real_escape_string($con,$server[8]); ?>')"<?php }?>>Error</button>
 								<?php } ?>
 							</td>
 							<td><?php echo $server[5]; ?></td>

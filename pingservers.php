@@ -12,7 +12,7 @@
             if ($servers=mysqli_query($con,$getservers)){
                 while ($server = mysqli_fetch_row($servers)){
 					//echo $server[2] . "<br />";
-					if($server[9] == "http"){
+					if($server[9] == "http" ){
 						$output = exec("/home/servermonitor/plugins/check_http -I ". $server[2] . " --port=". $server[3] . " --hostname=". $server[2] . " --onredirect=follow --no-body");
 						$http_status = preg_split("/[: -]/", $output);
 						if($http_status[4] == "200"){
@@ -21,36 +21,31 @@
 							$result = $con->query($updateserver);
 						}elseif($http_status[4] == "403"){
 							$server_status = "1";
-							$updateserver = "UPDATE `servers` SET `server_status` = '".$server_status."',last_check='".date("d-m-y H:i:s")."', last_error='".date("d-m-y H:i:s")."', server_message='".$output."' WHERE `servers`.`server_id` = ". $server[0].";"; // SQL to get the user
+							$updateserver = "UPDATE `servers` SET `server_status` = '".$server_status."',last_check='".date("d-m-y H:i:s")."', last_error='".date("d-m-y H:i:s")."', server_message='".mysqli_real_escape_string($con,$output)."' WHERE `servers`.`server_id` = ". $server[0].";"; // SQL to get the user
 							$result = $con->query($updateserver);
 						}elseif($http_status[4] == "302"){
 							$server_status = "1";
-							$updateserver = "UPDATE `servers` SET `server_status` = '".$server_status."',last_check='".date("d-m-y H:i:s")."', last_error='".date("d-m-y H:i:s")."', server_message='".$output."' WHERE `servers`.`server_id` = ". $server[0].";"; // SQL to get the user
+							$updateserver = "UPDATE `servers` SET `server_status` = '".$server_status."',last_check='".date("d-m-y H:i:s")."', last_error='".date("d-m-y H:i:s")."', server_message='".mysqli_real_escape_string($con,$output)."' WHERE `servers`.`server_id` = ". $server[0].";"; // SQL to get the user
 							$result = $con->query($updateserver);
 						}else{
 							$server_status = "0";
-							$updateserver = "UPDATE `servers` SET `server_status` = '".$server_status."',last_check='".date("d-m-y H:i:s")."', last_error='".date("d-m-y H:i:s")."', server_message='".$output."' WHERE `servers`.`server_id` = ". $server[0].";"; // SQL to get the user
+							$updateserver = "UPDATE `servers` SET `server_status` = '".$server_status."',last_check='".date("d-m-y H:i:s")."', last_error='".date("d-m-y H:i:s")."', server_message='".mysqli_real_escape_string($con,$output)."' WHERE `servers`.`server_id` = ". $server[0].";"; // SQL to get the user
 							$result = $con->query($updateserver);
-
 						}
 					}elseif($server[9] == "https"){
-						$output = exec("/home/servermonitor/plugins/check_http --ssl --sni -I ". $server[2] . " --port=". $server[3] . " --hostname=". $server[2] . " --onredirect=follow --no-body");
+						$output = exec("/home/servermonitor/plugins/check_http --ssl --sni -I ". $server[2] . " --port=". $server[3] . " --hostname=". $server[2] . " --onredirect=follow --no-body -C 30");
 						$http_status = preg_split("/[: -]/", $output);
-						if($http_status[4] == "200"){
+						if($http_status[0] == "OK"){
 							$server_status = "2";
-							$updateserver = "UPDATE `servers` SET `server_status` = '".$server_status."',last_check='".date("d-m-y H:i:s")."', server_message='".$output."' WHERE `servers`.`server_id` = ". $server[0].";"; // SQL to get the user
+							$updateserver = "UPDATE `servers` SET `server_status` = '".$server_status."',last_check='".date("d-m-y H:i:s")."', server_message='".mysqli_real_escape_string($con,$output)."' WHERE `servers`.`server_id` = ". $server[0].";"; // SQL to get the user
 							$result = $con->query($updateserver);
-						}elseif($http_status[4] == "403"){
+						}elseif($http_status[0] == "WARNING" || $http_status[0] == "CRITICAL"){
 							$server_status = "1";
-							$updateserver = "UPDATE `servers` SET `server_status` = '".$server_status."',last_check='".date("d-m-y H:i:s")."', last_error='".date("d-m-y H:i:s")."', server_message='".$output."' WHERE `servers`.`server_id` = ". $server[0].";"; // SQL to get the user
-							$result = $con->query($updateserver);
-						}elseif($http_status[4] == "302"){
-							$server_status = "1";
-							$updateserver = "UPDATE `servers` SET `server_status` = '".$server_status."',last_check='".date("d-m-y H:i:s")."', last_error='".date("d-m-y H:i:s")."', server_message='".$output."' WHERE `servers`.`server_id` = ". $server[0].";"; // SQL to get the user
+							$updateserver = "UPDATE `servers` SET `server_status` = '".$server_status."',last_check='".date("d-m-y H:i:s")."', last_error='".date("d-m-y H:i:s")."', server_message='".mysqli_real_escape_string($con,$output)."' WHERE `servers`.`server_id` = ". $server[0].";"; // SQL to get the user
 							$result = $con->query($updateserver);
 						}else{
 							$server_status = "0";
-							$updateserver = "UPDATE `servers` SET `server_status` = '".$server_status."',last_check='".date("d-m-y H:i:s")."', last_error='".date("d-m-y H:i:s")."', server_message='".$output."' WHERE `servers`.`server_id` = ". $server[0].";"; // SQL to get the user
+							$updateserver = "UPDATE `servers` SET `server_status` = '".$server_status."',last_check='".date("d-m-y H:i:s")."', last_error='".date("d-m-y H:i:s")."', server_message='".mysqli_real_escape_string($con,$output)."' WHERE `servers`.`server_id` = ". $server[0].";"; // SQL to get the user
 							$result = $con->query($updateserver);
 						}
 					}elseif($server[9] == "ts3"){

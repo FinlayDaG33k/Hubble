@@ -56,6 +56,12 @@ Please take the whole roadmap with a grain of salt, it's just a small record for
 		<td></td>
 	</tr>
 	<tr>
+		<td>Virtual Host support (suggested by Sling)</td>
+		<td><button class="btn btn-danger" type="button">Not Started</button></td>
+		<td>N/A</td>
+		<td></td>
+	</tr>
+	<tr>
 		<td>Better redirection on user action (registration, adding server etc.)</td>
 		<td><button class="btn btn-danger" type="button">Not Started</button></td>
 		<td>2016.04.*-dev</td>
@@ -90,6 +96,12 @@ Please take the whole roadmap with a grain of salt, it's just a small record for
 		<td><button class="btn btn-danger" type="button">Not Started</button></td>
 		<td>N/A</td>
 		<td></td>
+	</tr>
+	<tr>
+		<td>Check HTTPS certificate validity</td>
+		<td><button class="btn btn-success" type="button">Complete</button></td>
+		<td>2016.04.27-dev</td>
+		<td>2016.04.26-dev</td>
 	</tr>
 	<tr>
 		<td><button class="btn btn-danger" type="button">CRITICAL</button> Better Captcha (found by Sling)</td>

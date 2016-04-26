@@ -4,7 +4,5 @@ Official repository of the Hubble project that you can find at https://hubble.fi
 # Donate
 Want me to keep the Hubble project alive?  
 Then please make a donation.  
-With the donations, I can pay the server expenses and upgrade all the servers!  
-Development is pretty much free, but the servers are quite powerhungry :)  
-paypal: me@finlaydag33k.nl  
+I will donate 75% of all donations towards charity!  
 Bitcoin: 19HbRqc7RFnwvtMTKsC9FCWkDnre5JgACb

@@ -55,7 +55,7 @@ function showAPIkey() {
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo LANG_WELCOME_LOGIN_LOGGEDIN . $_SESSION['user'] ."! ";?><span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><a href="?action=addserver">Add Server</a></li>
-                  <li><a href="?action=changepassword">Change Password</a></li>
+                  <li><a href="?action=usersettings">Change Settings</a></li>
 				  <li><a href="#" onclick="showAPIkey()">View API key</a></li>
 				  <?php 
 					include('inc/checkadmin.php');

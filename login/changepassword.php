@@ -34,14 +34,14 @@
                     } else {
                         echo "Error changing password: " . $conn->error;
                     }
-                    header ("Location: http://".$_SERVER['HTTP_HOST']."?action=changepassword&success=true"); 
+                    echo "Password changed succesfully!";
                 } else {
                     // Credentials are invalid :C
-                    header ("Location: http://".$_SERVER['HTTP_HOST']."?action=changepassword&success=false&reason=invalidpass"); 
+                    echo "The current password you have entered is invalid.<br /> Please try again.";
                 }
             }
         } else {
-            header ("Location: http://".$_SERVER['HTTP_HOST']."?action=changepassword&success=false&reason=nonmatchingpass"); 
+             echo "The new password you have entered does match the confirmation.<br /> Please try again."; 
         }
     }
 ?>
