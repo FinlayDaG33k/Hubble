@@ -1,4 +1,5 @@
 <?php
+
     session_start();
     // loadup the config file
     require('config.inc.php');
@@ -25,20 +26,19 @@
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/inc/head.php') ?>
     </head>
     <body>
-        <div id="Wrapper" class="container">
-            <div id="Top">
-                <div id="Logo"></div>
-                <div id="Navbar"><?php include($_SERVER['DOCUMENT_ROOT'] . '/inc/navbar.php') ?></div>
-            </div>
-            <div id="Content" class="container">
-					<?php include("pages/$action.php"); ?>
-            </div>
-					<footer class="footer">
+            <?php include($_SERVER['DOCUMENT_ROOT'] . '/inc/navbar.php') ?>
+			<div class="content">
 			<div class="container">
-				<p class="text-muted"><?php include("inc/footer.php"); ?></p>
+				<?php include("pages/$action.php"); ?>
 			</div>
-		</footer>
-		</div>
+			</div>
+			<div class="container">
+			<footer class="footer">
+				
+					<p class="text-muted"><?php include("inc/footer.php"); ?></p>
+				
+			</footer>
+			</div>
     </body>
 </html>
 

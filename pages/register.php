@@ -10,6 +10,6 @@
                 <input type="password" class="form-control" name="passconf" required="required">
 			<input type="checkbox" name="agreetos" required="required"> I have read and agree with the <a href="?action=tos" target="_new">Terms of Service</a><br>
 			<label class="col-sm-12 control-label" for="inputchapta">Please solve the Captcha below</label>
-			<div class="g-recaptcha" data-sitekey="6Lco_Q8TAAAAAJ7jtI2gOF0os25bwiwu1zqiAoaI"></div><br /><br />	
+			<div class="g-recaptcha" data-sitekey="6Lfmax4TAAAAAL9RH7iR5wshGLORW_89QtVHvq4h"></div><br /><br />	
 			<input type="submit" class="form-control" name="login" value="Add User"/>
 </form>

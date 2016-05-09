@@ -7,6 +7,19 @@
     if (mysqli_connect_errno()){
         echo "MySQLi Connection was not established: " . mysqli_connect_error();
     }
+	
+
+	/*
+		$getusers = "select * from servers";
+	if ($users=mysqli_query($con,$getusers)){
+		while ($user = mysqli_fetch_row($users)){
+			if($user[7] < strtotime('-30 days')){
+				echo $user[1];
+			}
+		}
+	}
+	*/
+
     
     $getservers = "select * from servers";
             if ($servers=mysqli_query($con,$getservers)){

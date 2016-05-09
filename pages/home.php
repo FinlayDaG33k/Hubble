@@ -50,7 +50,8 @@
 							<td><?php echo $server[5]; ?></td>
 							<td><?php echo $server[7]; ?></td>
 							<th>
-								<?php if($server[9] == "ts3" && $server[4] == "0"){ ?><a href="?action=setup_ts3&server_id=<?php echo $server[0]; ?>"><button type="button" class="btn btn-primary">setup</button></a><?php } ?>
+								<?php if($server[9] == "ts3" && $server[4] == "0"){ ?><a href="?action=setup_ts3&server_id=<?php echo $server[0]; ?>"><button type="button" class="btn btn-info">setup</button></a><?php } ?>
+								<?php if($server[7] !== ""){?><a href="inc/ackerror.php?server_id=<?php echo $server[0]; ?>"><button type="button" class="btn btn-info">Clear Error</button></a><?php } ?>
 								<a href="?action=editserver&server_id=<?php echo $server[0]; ?>"><button type="button" class="btn btn-warning">Edit</button></a>
 								<a href="inc/removeserver.php?server_id=<?php echo $server[0]; ?>"><button type="button" class="btn btn-danger">Remove</button></a>
 							</th>
@@ -63,6 +64,7 @@
             
             }
 			?>
+			<?php if($_SESSION['desktopnotifications'] == true){ ?>
 			<script src="lib/lib_notifyme.js"></script>
 			<script src="js/jquery-2.2.3.min.js"></script>
 			<script type="text/javascript">
@@ -85,6 +87,7 @@
 			setInterval(offlinenotification, 60000);
 			</script>
 			<?php
+			}
         }
     }else{
 		?>

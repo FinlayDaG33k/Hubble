@@ -11,9 +11,6 @@
         echo "MySQLi Connection was not established: " . mysqli_connect_error();
     }
     if(isset($_SESSION['user'])){
-		if ( ! filter_var($_GET['ip'], FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE) ){
-			echo 'This server is not allowed! please go back and check the IP!';
-		}else{
 			$getid = "select ID from users where username='".$_SESSION['user']."' LIMIT 1";
 			if($user_row = $con->query($getid)){
 				$user_row = $user_row->fetch_row(); // Convert the row to Array
@@ -41,7 +38,6 @@
 				}
 
 			}
-		}
     }else{
 		echo 'YOu must be logged in to do this!';
 	}

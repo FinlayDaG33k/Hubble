@@ -1,3 +1,9 @@
+<?php
+    if(!isset($_SESSION['user'])){
+	header('Location: ?action=login');
+	}
+?>
+
 <form action="inc/adduser.php" method="post" >
        <div class="form-group form-group-sm col-sm-3">
             <label class="col-sm-4 control-label" for="user">Username</label>

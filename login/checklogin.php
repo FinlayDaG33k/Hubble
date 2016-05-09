@@ -32,7 +32,10 @@
                 // User credentials are valid :D
 				$_SESSION['timeout'] = time() + 600;
 				$_SESSION['user'] = htmlentities($user);
-				$_SESSION['favcolor'] = 'green';
+				$user_settings = json_decode($row[6]);
+				$_SESSION['desktopnotifications'] = $user_settings->desktopnotifications;
+				$updateuser = "UPDATE `users` SET `last_login` = '".strtotime(date("d-m-y"))."' WHERE `ID` = ". $row[0].";"; // SQL to get the user
+				$result = $con->query($updateuser);
 				header ("Location: http://".$_SERVER['HTTP_HOST']); 
             } else {
                 // Credentials are invalid :C
